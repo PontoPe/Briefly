@@ -7,6 +7,7 @@ import { Icon } from "./Icon";
 const navItems = [
   { label: "Workspace", icon: "dashboard", href: "/project/workspace" },
   { label: "Collaborate", icon: "group", href: "/project/collaborate" },
+  { label: "Calendar", icon: "calendar_month", href: "/project/calendar" },
   { label: "Brand Kit", icon: "palette", href: "/project/brand-kit" },
   { label: "Performance", icon: "analytics", href: "/project/performance" },
   { label: "Settings", icon: "settings", href: "/project/settings" },

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -16,7 +19,28 @@ const skills = [
   { label: "Art Direction" },
 ];
 
-const portfolioItems = [
+const certifications = [
+  { name: "Meta Ads Expert", issuer: "Meta", icon: "campaign", verified: true },
+  { name: "Google Analytics 4", issuer: "Google", icon: "analytics", verified: true },
+  { name: "HubSpot Inbound Marketing", issuer: "HubSpot", icon: "hub", verified: true },
+  { name: "Adobe Certified Professional", issuer: "Adobe", icon: "palette", verified: false },
+];
+
+const campaignMetrics = [
+  { label: "Avg. ROAS", value: "6.2x", trend: "+18%", up: true },
+  { label: "Campaigns Delivered", value: "47", trend: "+12", up: true },
+  { label: "Avg. CTR Lift", value: "34%", trend: "+8%", up: true },
+  { label: "Client Retention", value: "92%", trend: "+3%", up: true },
+];
+
+const portfolioItems: {
+  title: string;
+  subtitle: string;
+  image: string;
+  featured?: boolean;
+  video?: boolean;
+  videoSrc?: string;
+}[] = [
   {
     title: "Aura Skin Care Rebrand",
     subtitle: "Full Identity System & Social Campaign",
@@ -29,6 +53,8 @@ const portfolioItems = [
     subtitle: "Growth Marketing Assets",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCoQe-xXfJlET2QTuCxqg0B7VBHMD6C40TRGkwn5ZUpJBYMmyZV9nVC__Am5t4TAbwisTPmIY7Mb2UtXVIw5zEV-Ck8pg_V-bSk_6Hr9BOuQVM_xfrl3qlt4XcC9Piv4i7CjsDmzp2XzQTkJU-UfTfiWR3UMsjtLtZUdBf0RtGFNoO-68T1qKNCKnxSMWGiQP5RUiwkStmK_v_LpeeXmd7RV32nkxg2-WV0ArskzkW6c3XVt5gb2hpTQRT85uSUEUQMRczjERf9c9Z6",
+    video: true,
+    videoSrc: "/videos/video1.mp4",
   },
   {
     title: "Modern Muse",
@@ -47,6 +73,8 @@ const portfolioItems = [
     subtitle: "Visual Identity",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuABkQzPl5ZAyThH8mglEzaG4nFKl_BIDxn8dNeGlEdgACFTba7XEOfbwpuarWGlP1oNYr8OSIMAZtmLS3F23xgEOJ-IUxpn7RYrWtiiosQGT1YtY8MsT0Sa3T6swUPcI-HNKJkFO4zGvfh3zC8348ow6QakLz5x27_qCseXAVuy2L4jnqHI71S-bLql0T20EHp3byUyZKX-TFQFNLIQlcu-SwWt2DwCPa_q_EJhZum4-47qS73_mqWQ6LIf-UqcAWPDDYh7jf8BY9p3",
+    video: true,
+    videoSrc: "/videos/video2.mp4",
   },
 ];
 
@@ -70,9 +98,37 @@ const reviews = [
 /* ── Page ────────────────────────────────────────────────── */
 
 export default function FreelancerProfilePage() {
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+
   return (
     <>
       <Navbar />
+
+      {/* Video Lightbox */}
+      {videoSrc && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          onClick={() => setVideoSrc(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl mx-4 aspect-video rounded-2xl overflow-hidden bg-on-surface shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              className="w-full h-full object-contain"
+              src={videoSrc}
+              controls
+              autoPlay
+            />
+            <button
+              onClick={() => setVideoSrc(null)}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center transition-colors"
+            >
+              <Icon name="close" size={20} className="text-white" />
+            </button>
+          </div>
+        </div>
+      )}
 
       <main className="pt-24 pb-20 max-w-360 mx-auto px-8">
         {/* ── Profile Header ─────────────────────────────── */}
@@ -248,6 +304,61 @@ export default function FreelancerProfilePage() {
                 </div>
               ))}
             </section>
+
+            {/* Campaign Analytics */}
+            <section>
+              <h2 className="font-display text-xl font-bold mb-6 text-primary">
+                Campaign Performance
+              </h2>
+              <div className="grid grid-cols-2 gap-3">
+                {campaignMetrics.map((m) => (
+                  <div
+                    key={m.label}
+                    className="bg-surface-container-lowest p-4 rounded-xl"
+                  >
+                    <p className="text-label-sm text-on-surface-variant mb-1">
+                      {m.label}
+                    </p>
+                    <p className="text-headline-sm font-display font-extrabold text-on-surface">
+                      {m.value}
+                    </p>
+                    <span className={`text-label-sm font-bold ${m.up ? "text-secondary" : "text-error"}`}>
+                      {m.trend} <Icon name={m.up ? "trending_up" : "trending_down"} size={14} />
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Verified Certifications */}
+            <section>
+              <h2 className="font-display text-xl font-bold mb-6 text-primary">
+                Certifications
+              </h2>
+              <div className="space-y-3">
+                {certifications.map((cert) => (
+                  <div
+                    key={cert.name}
+                    className="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-xl"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center shrink-0">
+                      <Icon name={cert.icon} size={20} className="text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-body-sm font-bold text-on-surface truncate">
+                        {cert.name}
+                      </p>
+                      <p className="text-label-sm text-on-surface-variant">
+                        {cert.issuer}
+                      </p>
+                    </div>
+                    {cert.verified && (
+                      <Icon name="verified" filled size={20} className="text-secondary shrink-0" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
 
           {/* Right Column: Portfolio */}
@@ -260,20 +371,40 @@ export default function FreelancerProfilePage() {
               {portfolioItems.map((item) => (
                 <div
                   key={item.title}
+                  onClick={item.video && item.videoSrc ? () => setVideoSrc(item.videoSrc!) : undefined}
                   className={`group relative overflow-hidden rounded-xl bg-surface-container-lowest ${
                     item.featured ? "md:col-span-2" : ""
-                  }`}
+                  } ${item.video ? "cursor-pointer" : ""}`}
                 >
-                  <Image
-                    className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
-                      item.featured ? "h-100" : "h-72"
-                    }`}
-                    src={item.image}
-                    alt={item.title}
-                    width={800}
-                    height={item.featured ? 400 : 288}
-                    sizes="(max-width: 768px) 100vw, 66vw"
-                  />
+                  {item.videoSrc ? (
+                    <video
+                      className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+                        item.featured ? "h-100" : "h-72"
+                      }`}
+                      src={item.videoSrc}
+                      muted
+                      playsInline
+                      preload="metadata"
+                      onMouseEnter={(e) => e.currentTarget.play()}
+                      onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+                    />
+                  ) : (
+                    <Image
+                      className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+                        item.featured ? "h-100" : "h-72"
+                      }`}
+                      src={item.image}
+                      alt={item.title}
+                      width={800}
+                      height={item.featured ? 400 : 288}
+                      sizes="(max-width: 768px) 100vw, 66vw"
+                    />
+                  )}
+                  {item.video && (
+                    <div className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center hover:bg-surface transition-colors">
+                      <Icon name="play_arrow" filled size={24} className="text-primary" />
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 lg:p-8">
                     <h3 className="text-white text-lg lg:text-2xl font-bold">
                       {item.title}
@@ -285,7 +416,7 @@ export default function FreelancerProfilePage() {
             </div>
 
             <div className="mt-12 text-center">
-              <button className="px-12 py-4 border border-outline-variant/30 text-primary font-bold rounded-full hover:bg-surface-container transition-colors">
+              <button className="px-12 py-4 border border-outline-variant/20 text-primary font-bold rounded-full hover:bg-surface-container transition-colors">
                 View More Work
               </button>
             </div>

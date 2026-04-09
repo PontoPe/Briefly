@@ -16,7 +16,7 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-surface/80 backdrop-blur-xl">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-8">
+      <div className="mx-auto max-w-360 px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
           <Link

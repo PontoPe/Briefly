@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Editorial Marketplace | Find Your Next Project</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f2ecf4",
+                    "on-tertiary-fixed-variant": "#852300",
+                    "outline": "#7a7582",
+                    "on-secondary-fixed": "#00201a",
+                    "surface-variant": "#e6e0e9",
+                    "on-secondary-fixed-variant": "#005145",
+                    "primary": "#381e73",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#4f378b",
+                    "on-background": "#1d1b20",
+                    "on-tertiary-fixed": "#3a0a00",
+                    "primary-container": "#4f378b",
+                    "on-tertiary-container": "#ff9a7c",
+                    "inverse-on-surface": "#f5eff7",
+                    "secondary": "#006b5c",
+                    "on-surface": "#1d1b20",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#68fadd",
+                    "outline-variant": "#cbc4d2",
+                    "surface-container-highest": "#e6e0e9",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-bright": "#fdf7ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#c0a8ff",
+                    "surface-container-low": "#f8f2fa",
+                    "on-surface-variant": "#494551",
+                    "primary-fixed-dim": "#cfbcff",
+                    "tertiary-fixed-dim": "#ffb59f",
+                    "surface-container-high": "#ece6ee",
+                    "surface-tint": "#674fa5",
+                    "background": "#fdf7ff",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#852300",
+                    "secondary-fixed-dim": "#44ddc1",
+                    "surface": "#fdf7ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#007261",
+                    "inverse-surface": "#322f35",
+                    "tertiary": "#5e1600",
+                    "secondary-container": "#68fadd",
+                    "inverse-primary": "#cfbcff",
+                    "primary-fixed": "#e9ddff",
+                    "surface-dim": "#ded8e0",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#22005d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Be Vietnam Pro"
+                    ],
+                    "label": [
+                            "Be Vietnam Pro"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-sculpting {
+            background-color: #f8f2fa;
+        }
+        .ghost-border {
+            border: 1px solid rgba(203, 196, 210, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(122, 117, 130, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md border-b border-outline-variant/10">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-extrabold tracking-tighter text-primary dark:text-primary-light">Editorial Marketplace</span>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Browse</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Freelancers</a>
+<a class="text-primary dark:text-primary-light font-bold border-b-2 border-primary" href="#">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="hidden md:block text-on-surface-variant font-medium hover:text-primary transition-colors">Sign In</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold shadow-lg scale-95 active:scale-90 transition-transform">Post a Project</button>
+</div>
+</div>
+</header>
+<!-- Quick Filter Bar -->
+<div class="fixed top-[73px] w-full z-40 bg-surface-container-lowest/90 backdrop-blur-sm border-b border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto px-8 py-3 flex items-center justify-between gap-4 overflow-x-auto">
+<div class="flex items-center gap-4 flex-nowrap">
+<div class="group relative">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full text-sm font-semibold text-on-surface-variant hover:bg-primary/5 transition-colors whitespace-nowrap">
+                    Deliverable Type <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<div class="group relative">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full text-sm font-semibold text-on-surface-variant hover:bg-primary/5 transition-colors whitespace-nowrap">
+                    Budget Range <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<div class="group relative">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full text-sm font-semibold text-on-surface-variant hover:bg-primary/5 transition-colors whitespace-nowrap">
+                    Urgency <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<div class="group relative">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full text-sm font-semibold text-on-surface-variant hover:bg-primary/5 transition-colors whitespace-nowrap">
+                    Industry <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold text-sm px-4 py-2 hover:bg-primary/5 rounded-full transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+            Save Filter Preset
+        </button>
+</div>
+</div>
+<main class="pt-40 pb-20 max-w-[1440px] mx-auto px-8 min-h-screen">
+<div class="flex gap-12">
+<!-- Comprehensive Sidebar Filters -->
+<aside class="w-72 flex-shrink-0 hidden lg:block sticky top-44 h-[calc(100vh-12rem)] overflow-y-auto custom-scrollbar pr-4">
+<div class="space-y-8 pb-8">
+<!-- Strategic Objectives -->
+<div>
+<button class="flex items-center justify-between w-full mb-4 group">
+<h3 class="text-label-md font-bold text-primary uppercase tracking-widest">Business Objective</h3>
+<span class="material-symbols-outlined text-primary text-[20px]">expand_less</span>
+</button>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Brand Identity</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Performance Marketing</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Growth/Lead Gen</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="ml-3 text-sm font-medium text-on-surface-variant group-hover:text-primary transition-colors">Awareness/Engagement</span>
+</label>
+</div>
+</div>
+<!-- Channel Focus -->
+<div>
+<button class="flex items-center justify-between w-full mb-4 group">
+<h3 class="text-label-md font-bold text-primary uppercase tracking-widest text-left">Platform Focus</h3>
+<span class="material-symbols-outlined text-primary text-[20px]">expand_less</span>
+</button>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold cursor-pointer hover:bg-primary/10">Instagram</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold cursor-pointer hover:bg-primary/10">TikTok</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold cursor-pointer hover:bg-primary/10">LinkedIn</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold cursor-pointer hover:bg-primary/10">YouTube</span>
+<span class="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold cursor-pointer hover:bg-primary/10">Email</span>
+</div>
+</div>
+<!-- Tech Stack -->
+<div>
+<button class="flex items-center justify-between w-full mb-4 group">
+<h3 class="text-label-md font-bold text-primary uppercase tracking-widest text-left">Software Stack</h3>
+<span class="material-symbols-outlined text-primary text-[20px]">expand_less</span>
+</button>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="ml-3 text-sm font-medium text-on-surface-variant">Figma</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="ml-3 text-sm font-medium text-on-surface-variant">Adobe CC</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="ml-3 text-sm font-medium text-on-surface-variant">HubSpot</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant/30 text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="ml-3 text-sm font-medium text-on-surface-variant">Shopify</span>
+</label>
+</div>
+</div>
+<!-- Brand Maturity -->
+<div>
+<button class="flex items-center justify-between w-full mb-4 group">
+<h3 class="text-label-md font-bold text-primary uppercase tracking-widest text-left">Brand Maturity</h3>
+<span class="material-symbols-outlined text-primary text-[20px]">expand_less</span>
+</button>
+<div class="grid grid-cols-1 gap-2">
+<div class="p-3 border border-outline-variant/20 rounded-xl hover:border-primary transition-colors cursor-pointer">
+<p class="text-xs font-bold text-on-surface">Starting from Zero</p>
+</div>
+<div class="p-3 border border-outline-variant/20 rounded-xl hover:border-primary transition-colors cursor-pointer bg-primary/5 border-primary/40">
+<p class="text-xs font-bold text-primary">Scaling</p>
+</div>
+<div class="p-3 border border-outline-variant/20 rounded-xl hover:border-primary transition-colors cursor-pointer">
+<p class="text-xs font-bold text-on-surface">Enterprise</p>
+</div>
+</div>
+</div>
+<!-- Collaboration & Style -->
+<div class="space-y-6">
+<div>
+<h3 class="text-label-md font-bold text-primary uppercase tracking-widest mb-4">Collab Model</h3>
+<select class="w-full bg-surface-container border-none rounded-lg text-sm font-medium py-3 px-4 focus:ring-1 focus:ring-primary">
+<option>Collaborative</option>
+<option>Full Autonomy</option>
+<option>Embedded</option>
+<option>Consulting</option>
+</select>
+</div>
+<div>
+<h3 class="text-label-md font-bold text-primary uppercase tracking-widest mb-4">Creative Aesthetic</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 border border-outline-variant/30 rounded-full text-xs font-bold text-on-surface-variant hover:text-primary hover:border-primary cursor-pointer">Minimalist</span>
+<span class="px-3 py-1.5 border border-outline-variant/30 rounded-full text-xs font-bold text-on-surface-variant hover:text-primary hover:border-primary cursor-pointer">Bold</span>
+<span class="px-3 py-1.5 border border-outline-variant/30 rounded-full text-xs font-bold text-on-surface-variant hover:text-primary hover:border-primary cursor-pointer">Corporate</span>
+</div>
+</div>
+<div>
+<h3 class="text-label-md font-bold text-primary uppercase tracking-widest mb-4">Language</h3>
+<div class="flex items-center gap-2 p-3 bg-surface-container rounded-xl">
+<span class="material-symbols-outlined text-[18px]">language</span>
+<span class="text-xs font-bold">English (Primary)</span>
+<span class="material-symbols-outlined ml-auto text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Area: Project Cards -->
+<section class="flex-grow">
+<div class="mb-12 flex justify-between items-end">
+<div>
+<h1 class="text-4xl font-extrabold font-headline tracking-tighter text-on-surface">Available Projects</h1>
+<p class="text-on-surface-variant mt-2">Showing 128 high-impact marketing opportunities based on your filters</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-label-md text-on-surface-variant font-medium">Sort by:</span>
+<div class="bg-surface-container px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 cursor-pointer">
+                        Newest First
+                        <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1 (Large Feature) -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-none hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 group md:col-span-2 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="flex flex-col md:flex-row gap-8 relative z-10">
+<div class="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden">
+<img alt="Dynamic marketing team" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8l0ln6oGPwy3OcY25XTqeY4nMiYsd6mSeriKLc8tb8UW7ky2XdxB9o1E3dLfk7uUstFv-ZQPmA0OCVNobx8JxSdyRIiWZ75n9oqhnu37Jm9-h73ta8qLbMZeCdURXwmDV82a6ZrWj_ODCd8XSFcI9J8bcDZXww6KpIsTdkGlazhX6bES4V8RaJmQyT4hRUSdjZL4PGgm4en4re29Rx0XsclMqJm9B3R303b5MiCNUu6IE2PK3_AH2z374c56K5tdAgi2MdWgJKQA_"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Featured Campaign</span>
+<span class="bg-primary/10 text-primary px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Scaling</span>
+</div>
+<div class="text-2xl font-black text-primary">$8,500 - $12,000</div>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Global Brand Launch: Eco-Conscious Apparel</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed mb-6">Seeking a lead strategist for a multi-channel launch. Focus on storytelling and sustainable positioning.</p>
+<div class="flex gap-3 mb-6">
+<span class="flex items-center gap-1 text-xs font-bold text-on-surface-variant bg-surface-container px-3 py-1 rounded-lg">Figma</span>
+<span class="flex items-center gap-1 text-xs font-bold text-on-surface-variant bg-surface-container px-3 py-1 rounded-lg">Brand Identity</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-6">
+<div class="flex items-center gap-2 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+                                    3 Months
+                                </div>
+<div class="flex items-center gap-2 text-sm font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-primary">location_on</span>
+                                    Remote
+                                </div>
+<button class="ml-auto bg-tertiary-container text-on-tertiary px-8 py-3 rounded-full font-bold text-sm tracking-tight hover:opacity-90 transition-opacity">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 (Standard) -->
+<div class="bg-surface-container-lowest p-6 rounded-xl hover:bg-surface-container-low transition-colors duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-primary-fixed rounded-xl">
+<span class="material-symbols-outlined text-primary">brush</span>
+</div>
+<div class="text-lg font-bold text-primary">$2,500</div>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Visual Identity for Fintech Startup</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-2">Brand guidelines and UI kit for a mobile banking application focusing on Gen-Z scaling.</p>
+<div class="flex items-center gap-2 flex-wrap mb-6">
+<span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-[10px] font-bold uppercase">Brand Identity</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold uppercase">Figma</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold uppercase">Scaling</span>
+</div>
+<button class="w-full py-3 rounded-full border border-outline-variant/20 text-primary font-bold text-sm hover:bg-primary hover:text-on-primary transition-all">View Details</button>
+</div>
+<!-- Card 3 (Standard) -->
+<div class="bg-surface-container-lowest p-6 rounded-xl hover:bg-surface-container-low transition-colors duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-secondary-fixed rounded-xl">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant">trending_up</span>
+</div>
+<div class="text-lg font-bold text-primary">$4,000/mo</div>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-2">Growth &amp; SEO Strategy: B2B SaaS</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6 line-clamp-2">Long-term partnership to scale organic traffic for an enterprise project management tool.</p>
+<div class="flex items-center gap-2 flex-wrap mb-6">
+<span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-[10px] font-bold uppercase">Growth/Lead Gen</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold uppercase">LinkedIn</span>
+</div>
+<button class="w-full py-3 rounded-full border border-outline-variant/20 text-primary font-bold text-sm hover:bg-primary hover:text-on-primary transition-all">View Details</button>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-4">
+<button class="p-3 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<span class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary font-bold">1</span>
+<span class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant font-bold hover:bg-surface-container transition-colors cursor-pointer">2</span>
+<span class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant font-bold hover:bg-surface-container transition-colors cursor-pointer">3</span>
+</div>
+<button class="p-3 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low-dark w-full rounded-none">
+<div class="w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-[1440px] mx-auto">
+<div class="col-span-1">
+<span class="text-xl font-bold text-on-surface">Editorial Marketplace</span>
+<p class="mt-4 text-on-surface-variant text-body-md">The premium gallery for elite marketing and design professionals to connect with global brands.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-bold text-primary">Platform</span>
+<a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">Support</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-bold text-primary">Legal</span>
+<a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all" href="#">Cookie Policy</a>
+</div>
+<div class="flex flex-col gap-6">
+<span class="font-bold text-primary">Newsletter</span>
+<div class="relative">
+<input class="w-full bg-surface-container p-3 rounded-xl border-none focus:ring-2 focus:ring-primary/20 text-sm" placeholder="Your email" type="text"/>
+<button class="absolute right-2 top-2 bottom-2 bg-primary text-on-primary px-4 rounded-lg text-xs font-bold">Join</button>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 max-w-[1440px] mx-auto">
+<p class="text-on-surface-variant text-sm">© 2024 Editorial Marketplace. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">language</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">hub</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">groups</span>
+</div>
+</div>
+</footer>
+</body></html>

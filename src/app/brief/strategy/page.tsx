@@ -336,7 +336,7 @@ export default function BriefStrategyPage() {
                   </p>
                 </div>
 
-                <button className="w-full bg-primary text-on-primary py-3 rounded-xl font-display font-bold text-body-md hover:opacity-90 transition-opacity">
+                <button className="w-full hero-gradient text-on-primary py-3 rounded-xl font-display font-bold text-body-md hover:opacity-90 transition-opacity">
                   Apply Recommendations
                 </button>
               </div>

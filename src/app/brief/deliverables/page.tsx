@@ -275,8 +275,8 @@ export default function BriefDeliverablesPage() {
                   <Icon name="arrow_back" size={18} />
                   Back to Strategy
                 </Link>
-                <Link href="/brief/review" className="hero-gradient text-on-primary px-8 py-3.5 rounded-full font-display font-bold text-body-md hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2">
-                  Continue to Review
+                <Link href="/brief/timeline" className="hero-gradient text-on-primary px-8 py-3.5 rounded-full font-display font-bold text-body-md hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2">
+                  Continue to Timeline
                   <Icon name="arrow_forward" size={18} />
                 </Link>
               </div>

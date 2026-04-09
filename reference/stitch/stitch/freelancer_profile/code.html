@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Freelancer Profile | Editorial Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f2ecf4",
+                    "on-tertiary-fixed-variant": "#852300",
+                    "outline": "#7a7582",
+                    "on-secondary-fixed": "#00201a",
+                    "surface-variant": "#e6e0e9",
+                    "on-secondary-fixed-variant": "#005145",
+                    "primary": "#381e73",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#4f378b",
+                    "on-background": "#1d1b20",
+                    "on-tertiary-fixed": "#3a0a00",
+                    "primary-container": "#4f378b",
+                    "on-tertiary-container": "#ff9a7c",
+                    "inverse-on-surface": "#f5eff7",
+                    "secondary": "#006b5c",
+                    "on-surface": "#1d1b20",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#68fadd",
+                    "outline-variant": "#cbc4d2",
+                    "surface-container-highest": "#e6e0e9",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-bright": "#fdf7ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#c0a8ff",
+                    "surface-container-low": "#f8f2fa",
+                    "on-surface-variant": "#494551",
+                    "primary-fixed-dim": "#cfbcff",
+                    "tertiary-fixed-dim": "#ffb59f",
+                    "surface-container-high": "#ece6ee",
+                    "surface-tint": "#674fa5",
+                    "background": "#fdf7ff",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#852300",
+                    "secondary-fixed-dim": "#44ddc1",
+                    "surface": "#fdf7ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#007261",
+                    "inverse-surface": "#322f35",
+                    "tertiary": "#5e1600",
+                    "secondary-container": "#68fadd",
+                    "inverse-primary": "#cfbcff",
+                    "primary-fixed": "#e9ddff",
+                    "surface-dim": "#ded8e0",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#22005d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Be Vietnam Pro"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-sculpting {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-360 mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-primary dark:text-primary-light font-headline">Editorial Marketplace</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Browse</a>
+<a class="text-primary dark:text-primary-light font-bold border-b-2 border-primary" href="#">Freelancers</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-primary font-bold px-4 py-2 hover:opacity-80 transition-all">Sign In</button>
+<button class="bg-linear-to-br from-primary to-primary-container text-on-primary font-bold px-6 py-2.5 rounded-full scale-95 active:scale-90 transition-transform">Post a Project</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 max-w-360 mx-auto px-8">
+<!-- Profile Header Section -->
+<header class="relative mb-16">
+<div class="w-full h-64 rounded-xl overflow-hidden -mb-20 bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Abstract 3D fluid shapes in deep purple and soft lavender with metallic highlights and editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAForWgh75DvAfdahfGbwpAuiqAQAO8VkZMTNYgyxHNeaNYbxAE4s9rEi_8mhLEEFKsmYMJhtSp7a-Ezr3Sy9ES01YLwl94jKYG6F16f6VIsF7hBYHuSEnKkGVV5o9awmPZ4FxMqBKEQLNmkPz-kZ72KtFuvzg5h0KU3l9tTbRyvYZUFRCxj8Pe5_z-MJcjv1eSltjPzOQFyutmhRWpOCEAXT81GkWIlSIB34cnCGkHAYW8s3-002pQ1eblC8g8p8G0y5WXse4mQAYv"/>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-end gap-8 px-12">
+<div class="w-48 h-48 rounded-xl overflow-hidden border-8 border-surface shadow-2xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional marketing designer with a confident smile, warm studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACsbDtADoIj2i2Hws6VKvN34OUUmBxb8fwkPEI3O8vVmZehW3WUiHO5r-tk3ZuEeyGlciCvlX_wL_BouGZrkmQalmUi08O5bH5bvyj7Y7HlKF_uTtcWs0doRJzEEfAhl2GfOCqXuiOF3patj6THr0eRb5G65w47uRyipFJSxLivoODv82yehpi8k_0r0Gf9rkDFJ0DJQPfz4W_lrUp_QbQD-Fe3yBOsMAK6eIodV1Dt3L0fauDbz5PT-yklao59Rq0zP7fTrIh1eXU"/>
+</div>
+<div class="flex-1 pb-4">
+<div class="flex flex-wrap items-center gap-4 mb-2">
+<h1 class="text-display-md font-headline font-extrabold tracking-tight text-primary">Julianne V.</h1>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+                            Top Rated
+                        </span>
+</div>
+<div class="flex flex-wrap items-center gap-6 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>London, UK</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary">star</span>
+<span class="font-bold text-on-surface">4.9/5.0</span>
+<span class="text-sm">(128 Reviews)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span>Expert Marketing Designer</span>
+</div>
+</div>
+</div>
+<div class="pb-4 flex gap-4">
+<button class="bg-tertiary-container text-on-tertiary font-bold px-8 py-3 rounded-full hover:opacity-90 transition-all flex items-center gap-2">
+                        Hire Me
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Bio & Skills -->
+<div class="lg:col-span-4 space-y-12">
+<!-- About Me -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<h2 class="font-headline text-xl font-bold mb-6 text-primary border-b border-outline-variant/20 pb-4">About Me</h2>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                        I am a strategic marketing designer specializing in high-growth brand identities and conversion-led digital campaigns. With over 8 years of experience working with London's top agencies, I blend editorial aesthetics with data-driven strategy to create visuals that don't just look good—they perform.
+                    </p>
+<div class="space-y-4">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Availability</span>
+<span class="text-secondary font-bold">20 hrs/week</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Languages</span>
+<span class="text-on-surface font-medium">English, French</span>
+</div>
+</div>
+</section>
+<!-- Skills Chips -->
+<section>
+<h2 class="font-headline text-xl font-bold mb-6 text-primary">Core Expertise</h2>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-tertiary text-on-tertiary rounded-full text-sm font-medium">Brand Strategy</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium">Adobe Creative Suite</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium">Growth Marketing</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium">UI/UX Design</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium">Typography</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium">Editorial Layout</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium">Motion Graphics</span>
+<span class="px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-full text-sm font-medium">Art Direction</span>
+</div>
+</section>
+<!-- Reviews -->
+<section class="space-y-6">
+<h2 class="font-headline text-xl font-bold text-primary">Client Reviews</h2>
+<div class="p-6 bg-surface-container rounded-xl">
+<div class="flex items-center gap-1 mb-2 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-sm italic text-on-surface-variant mb-4">"Julianne completely transformed our brand's visual language. Her attention to detail is unmatched."</p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container"></div>
+<div>
+<p class="text-xs font-bold">Marcus Chen</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">CMO, TechFlow</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container rounded-xl">
+<div class="flex items-center gap-1 mb-2 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-sm italic text-on-surface-variant mb-4">"Highly professional and very efficient. The campaign graphics delivered resulted in a 40% CTR increase."</p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container"></div>
+<div>
+<p class="text-xs font-bold">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Founder, Bloom Agency</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Portfolio Bento Grid -->
+<div class="lg:col-span-8">
+<h2 class="font-headline text-3xl font-extrabold text-primary mb-8 tracking-tight">Portfolio Highlights</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Large Feature Card -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-100 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist luxury brand identity presentation with sleek typography, muted earthy tones, and high-end texture mockups" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqheR2H9EOsSAwIloi46c1dCNQ3dLGkmVrPAeXaG39fYEPMYPRDMocq2rkkyrLAxMYOHsdQ1CBlVjWKYG76CvKAsuARncTjxTddUNEp32pawavC4yghIehPSqijCBbVOfObmD9tys9pR1urbpUMUxulbnmDqbtlj8VVApEnakQiJTdCS91vwGemJ5HRCysF8ShwtHdOnk3KWxfNA-dRkUVOhkYV2gPVVCb12w9tdmdfYcqKd24Xxu2qmw9bq7XCTjRT0RQyL4w79OD"/>
+<div class="absolute inset-0 bg-linear-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<h3 class="text-white text-2xl font-bold">Aura Skin Care Rebrand</h3>
+<p class="text-white/80">Full Identity System &amp; Social Campaign</p>
+</div>
+</div>
+<!-- Grid Item 2 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Vibrant tech marketplace campaign graphics with bold sans-serif type and neon color accents on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoQe-xXfJlET2QTuCxqg0B7VBHMD6C40TRGkwn5ZUpJBYMmyZV9nVC__Am5t4TAbwisTPmIY7Mb2UtXVIw5zEV-Ck8pg_V-bSk_6Hr9BOuQVM_xfrl3qlt4XcC9Piv4i7CjsDmzp2XzQTkJU-UfTfiWR3UMsjtLtZUdBf0RtGFNoO-68T1qKNCKnxSMWGiQP5RUiwkStmK_v_LpeeXmd7RV32nkxg2-WV0ArskzkW6c3XVt5gb2hpTQRT85uSUEUQMRczjERf9c9Z6"/>
+<div class="absolute inset-0 bg-linear-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white text-lg font-bold">Velocity Growth</h3>
+<p class="text-white/80">Growth Marketing Assets</p>
+</div>
+</div>
+<!-- Grid Item 3 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial magazine layout design with asymmetrical grids, elegant serif headlines, and high-fashion photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb7p2087F676eMivrwKy6UauK8E5jX-HvHfZuRajxKL1wBGyopblBmlQL2hkRY5PQ8G-59k6dyMcGGyt6B8ZsbRKVnJxpshLTvekyYV_Ug11PAFq7IBUYnymobzz_HbHLvZLz0mNRtEHAxDcP3SuKC3vuRNzdG6JYlDNF09FoKKs1X6nWNxd26DU8MczrD8Mhj_saJqVAl-rZZqseOS4x4tYWmqdbo1Jcb2cLKnD7Y3sWKnY7_jViu7UbqKMtFABxlniBhqfRjnPPh"/>
+<div class="absolute inset-0 bg-linear-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white text-lg font-bold">Modern Muse</h3>
+<p class="text-white/80">Digital Publication Layout</p>
+</div>
+</div>
+<!-- Grid Item 4 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Clean corporate branding package with stationery, business cards, and digital interface on a minimal grey surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtAMaUyvAYor-TRjksHOfM3IHx958PeczC5Y4ZZtk_x_-7hDIOZ05LMb3bsL4kAAJNmfz92_7c2femNNWfF3VANqXv2oa2w4OqSJShGhS8vic29UTLqpsgCwwDprFxmSUrTAcTWhSfOf8V2DWklcZWVZPiPuHpYHpNBnTH0HlxRASMGpNXKL4pMIjwwmXu2yOyraOiAPs9QtcsvfP8lAnOy5HybKysUT_ipHSmEB0beNLGFqeMWOpDMAfbtjOVoi4yInwR2ohoQQ6F"/>
+<div class="absolute inset-0 bg-linear-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white text-lg font-bold">Zenith FinTech</h3>
+<p class="text-white/80">UI Design System</p>
+</div>
+</div>
+<!-- Grid Item 5 -->
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract marketing poster design with geometric shapes, halftone patterns, and vibrant contrasting colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABkQzPl5ZAyThH8mglEzaG4nFKl_BIDxn8dNeGlEdgACFTba7XEOfbwpuarWGlP1oNYr8OSIMAZtmLS3F23xgEOJ-IUxpn7RYrWtiiosQGT1YtY8MsT0Sa3T6swUPcI-HNKJkFO4zGvfh3zC8348ow6QakLz5x27_qCseXAVuy2L4jnqHI71S-bLql0T20EHp3byUyZKX-TFQFNLIQlcu-SwWt2DwCPa_q_EJhZum4-47qS73_mqWQ6LIf-UqcAWPDDYh7jf8BY9p3"/>
+<div class="absolute inset-0 bg-linear-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="text-white text-lg font-bold">Nexus Campaign</h3>
+<p class="text-white/80">Visual Identity</p>
+</div>
+</div>
+</div>
+<!-- Portfolio Action -->
+<div class="mt-12 text-center">
+<button class="px-12 py-4 border border-outline-variant/30 text-primary font-bold rounded-full hover:bg-surface-container transition-colors">
+                        View More Work
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low-dark w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-on-surface mb-4 font-headline">Editorial Marketplace</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">The premier destination for elite creative talent and ambitious global agencies.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-primary mb-4">Marketplace</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Careers</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-primary mb-4">Resources</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Cookie Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Support</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-primary mb-4">Copyright</h4>
+<p class="text-on-surface-variant text-sm">© 2024 Editorial Marketplace. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

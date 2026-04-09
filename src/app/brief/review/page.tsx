@@ -104,7 +104,7 @@ export default function BriefReviewPage() {
                   <h2 className="font-display text-headline-md font-bold text-primary">
                     The Vision
                   </h2>
-                  <Link href="/brief/deliverables" className="text-on-surface-variant flex items-center gap-1 text-body-sm font-semibold hover:text-primary transition-colors">
+                  <Link href="/brief/timeline" className="text-on-surface-variant flex items-center gap-1 text-body-sm font-semibold hover:text-primary transition-colors">
                     <Icon name="edit" size={16} />
                     Edit Brief
                   </Link>

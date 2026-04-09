@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Icon } from "@/components/Icon";
 
 const metrics = [
   { label: "ROAS", value: "8.4x", trend: "+32%", up: true },
@@ -16,12 +20,43 @@ const assets = [
 ];
 
 export default function CaseStudyPage() {
+  const [videoOpen, setVideoOpen] = useState(false);
+
   return (
     <>
       <Navbar />
 
+      {/* Video Lightbox */}
+      {videoOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          onClick={() => setVideoOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-4xl mx-4 aspect-video rounded-2xl overflow-hidden bg-on-surface shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+              <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center">
+                <Icon name="play_arrow" filled size={48} className="text-white" />
+              </div>
+              <p className="text-white/80 font-display font-bold text-title-md">
+                Campaign Reel
+              </p>
+              <p className="text-white/40 text-body-sm">2:34 min &middot; Video preview placeholder</p>
+            </div>
+            <button
+              onClick={() => setVideoOpen(false)}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+            >
+              <Icon name="close" size={20} className="text-white" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Hero header */}
-      <section className="mx-auto max-w-[1440px] px-6 lg:px-8 py-12">
+      <section className="mx-auto max-w-360 px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           <div className="flex-1">
             <div className="flex gap-2 mb-4">
@@ -68,11 +103,11 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Gallery */}
-      <section className="mx-auto max-w-[1440px] px-6 lg:px-8 pb-12">
+      <section className="mx-auto max-w-360 px-6 lg:px-8 pb-12">
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 lg:col-span-8">
-            <div className="aspect-[16/10] bg-primary-container/20 rounded-3xl overflow-hidden relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/10 group-hover:scale-105 transition-transform duration-700" />
+            <div className="aspect-16/10 bg-primary-container/20 rounded-3xl overflow-hidden relative group">
+              <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/10 group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="material-symbols-outlined text-primary/30 text-[80px]">
                   image
@@ -88,7 +123,10 @@ export default function CaseStudyPage() {
                 </span>
               </div>
             </div>
-            <div className="flex-1 bg-primary-container rounded-3xl p-6 flex items-center gap-4">
+            <button
+              onClick={() => setVideoOpen(true)}
+              className="flex-1 bg-primary-container rounded-3xl p-6 flex items-center gap-4 w-full text-left hover:opacity-90 transition-opacity cursor-pointer"
+            >
               <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center">
                 <span className="material-symbols-outlined text-white text-[28px]">
                   play_arrow
@@ -100,13 +138,13 @@ export default function CaseStudyPage() {
                 </div>
                 <div className="text-body-sm text-white/60">2:34 min</div>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </section>
 
       {/* Metrics */}
-      <section className="mx-auto max-w-[1440px] px-6 lg:px-8 pb-16">
+      <section className="mx-auto max-w-360 px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((m) => (
             <div
@@ -131,7 +169,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Narrative */}
-      <section className="mx-auto max-w-[1440px] px-6 lg:px-8 pb-16">
+      <section className="mx-auto max-w-360 px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Challenge */}
           <div className="bg-surface-container-lowest rounded-3xl p-8">
@@ -145,7 +183,7 @@ export default function CaseStudyPage() {
                 "No cohesive visual language for digital",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="material-symbols-outlined text-tertiary text-[20px] flex-shrink-0 mt-0.5">
+                  <span className="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">
                     close
                   </span>
                   <span className="text-body-md text-on-surface-variant">
@@ -168,7 +206,7 @@ export default function CaseStudyPage() {
                 "Motion-first social content strategy",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">
+                  <span className="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">
                     check_circle
                   </span>
                   <span className="text-body-md text-on-surface-variant">
@@ -227,7 +265,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Campaign Assets */}
-      <section className="mx-auto max-w-[1440px] px-6 lg:px-8 pb-16">
+      <section className="mx-auto max-w-360 px-6 lg:px-8 pb-16">
         <h2 className="font-display text-headline-lg font-extrabold text-on-surface mb-8">
           Campaign Assets
         </h2>
@@ -235,10 +273,10 @@ export default function CaseStudyPage() {
           {assets.map((asset) => (
             <div
               key={asset.title}
-              className="min-w-[400px] bg-surface-container-lowest rounded-3xl overflow-hidden flex-shrink-0 group"
+              className="min-w-100 bg-surface-container-lowest rounded-3xl overflow-hidden shrink-0 group"
             >
-              <div className="aspect-[4/5] bg-surface-container relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/10 group-hover:scale-105 transition-transform duration-500" />
+              <div className="aspect-4/5 bg-surface-container relative overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-b from-transparent to-primary/10 group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="material-symbols-outlined text-on-surface-variant/20 text-[56px]">
                     image
@@ -259,8 +297,8 @@ export default function CaseStudyPage() {
       </section>
 
       {/* CTA */}
-      <section className="mx-6 lg:mx-auto max-w-[1200px] mb-20">
-        <div className="bg-tertiary-container rounded-[2rem] p-12 lg:p-16 text-center">
+      <section className="mx-6 lg:mx-auto max-w-300 mb-20">
+        <div className="bg-tertiary-container rounded-4xl p-12 lg:p-16 text-center">
           <h2 className="font-display text-display-sm font-extrabold text-white tracking-tight">
             Ready to curate your next campaign?
           </h2>

@@ -31,6 +31,40 @@ const quickFilters = [
   "Industry",
 ];
 
+const quickFilterOptions: Record<string, string[]> = {
+  "Deliverable Type": [
+    "Static Social Posts",
+    "Infographics",
+    "Pitch Decks",
+    "Reels / TikTok Editing",
+    "2D Animation",
+    "Ad Copy",
+    "Landing Pages",
+    "Media Buying",
+  ],
+  "Budget Range": [
+    "Under $1,000",
+    "$1,000 – $5,000",
+    "$5,000 – $15,000",
+    "$15,000+",
+    "Monthly Retainer",
+  ],
+  Urgency: [
+    "Flexible Timeline",
+    "Standard (1–2 weeks)",
+    "Rush (48–72 hours)",
+    "Emergency / Same-day",
+  ],
+  Industry: [
+    "E-commerce / DTC",
+    "B2B / Enterprise SaaS",
+    "Local Businesses",
+    "Infoproducts / Education",
+    "Gaming / Web3",
+    "Fashion & Lifestyle",
+  ],
+};
+
 /* ── Project data ────────────────────────────────────────── */
 
 const featuredProject = {
@@ -78,11 +112,24 @@ export default function BrowsePostsPage() {
     "Brand Identity",
   ]);
   const [selectedMaturity, setSelectedMaturity] = useState("Scaling");
+  const [openQuickFilter, setOpenQuickFilter] = useState<string | null>(null);
+  const [quickSelections, setQuickSelections] = useState<Record<string, string[]>>({});
 
   const toggleObjective = (o: string) =>
     setCheckedObjectives((prev) =>
       prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]
     );
+
+  const toggleQuickSelection = (filter: string, option: string) =>
+    setQuickSelections((prev) => {
+      const current = prev[filter] || [];
+      return {
+        ...prev,
+        [filter]: current.includes(option)
+          ? current.filter((x) => x !== option)
+          : [...current, option],
+      };
+    });
 
   return (
     <>
@@ -92,14 +139,68 @@ export default function BrowsePostsPage() {
       <div className="fixed top-18.25 w-full z-40 bg-surface-container-lowest/90 backdrop-blur-sm border-b border-outline-variant/10">
         <div className="max-w-360 mx-auto px-8 py-3 flex items-center justify-between gap-4 overflow-x-auto">
           <div className="flex items-center gap-4 flex-nowrap">
-            {quickFilters.map((f) => (
-              <button
-                key={f}
-                className="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full text-sm font-semibold text-on-surface-variant hover:bg-primary/5 transition-colors whitespace-nowrap"
-              >
-                {f} <Icon name="expand_more" size={18} />
-              </button>
-            ))}
+            {quickFilters.map((f) => {
+              const isOpen = openQuickFilter === f;
+              const count = (quickSelections[f] || []).length;
+              return (
+                <div key={f} className="relative">
+                  <button
+                    onClick={() => setOpenQuickFilter(isOpen ? null : f)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-colors whitespace-nowrap ${
+                      isOpen || count > 0
+                        ? "bg-primary/10 text-primary"
+                        : "bg-surface-container text-on-surface-variant hover:bg-primary/5"
+                    }`}
+                  >
+                    {f}
+                    {count > 0 && (
+                      <span className="w-5 h-5 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center">
+                        {count}
+                      </span>
+                    )}
+                    <Icon name={isOpen ? "expand_less" : "expand_more"} size={18} />
+                  </button>
+
+                  {isOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_rgba(29,27,32,0.12)] z-50 p-3 space-y-1">
+                      {(quickFilterOptions[f] || []).map((option) => {
+                        const selected = (quickSelections[f] || []).includes(option);
+                        return (
+                          <button
+                            key={option}
+                            onClick={() => toggleQuickSelection(f, option)}
+                            className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                              selected
+                                ? "bg-primary/10 text-primary"
+                                : "text-on-surface-variant hover:bg-surface-container"
+                            }`}
+                          >
+                            <span className="flex items-center gap-2">
+                              <span className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 ${
+                                selected
+                                  ? "bg-primary border-primary"
+                                  : "border-outline-variant/30"
+                              }`}>
+                                {selected && <Icon name="check" size={12} className="text-on-primary" />}
+                              </span>
+                              {option}
+                            </span>
+                          </button>
+                        );
+                      })}
+                      {(quickSelections[f] || []).length > 0 && (
+                        <button
+                          onClick={() => setQuickSelections((prev) => ({ ...prev, [f]: [] }))}
+                          className="w-full text-center text-label-sm font-bold text-primary pt-2 hover:underline"
+                        >
+                          Clear All
+                        </button>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
           <button className="flex items-center gap-2 text-primary font-bold text-sm px-4 py-2 hover:bg-primary/5 rounded-full transition-colors whitespace-nowrap">
             <Icon name="bookmark" size={20} />
