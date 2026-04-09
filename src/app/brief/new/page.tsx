@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { BriefSidebar } from "@/components/BriefSidebar";
 import { Icon } from "@/components/Icon";
@@ -48,7 +49,7 @@ export default function BriefFoundationPage() {
       <BriefSidebar />
 
       <div className="ml-64 pt-4">
-        <div className="mx-auto max-w-[1100px] px-8 py-8">
+        <div className="mx-auto max-w-275 px-8 py-8">
           {/* Step indicator */}
           <div className="flex items-center justify-center gap-0 mb-12">
             {steps.map((step, i) => (
@@ -168,10 +169,10 @@ export default function BriefFoundationPage() {
                 <button className="text-body-md text-on-surface-variant hover:text-on-surface transition-colors">
                   Save Draft
                 </button>
-                <button className="hero-gradient text-on-primary px-8 py-3.5 rounded-full font-display font-bold text-body-md hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2">
+                <Link href="/brief/strategy" className="hero-gradient text-on-primary px-8 py-3.5 rounded-full font-display font-bold text-body-md hover:opacity-90 transition-opacity shadow-lg flex items-center gap-2">
                   Continue to Strategy
                   <Icon name="arrow_forward" size={18} />
-                </button>
+                </Link>
               </div>
             </div>
 

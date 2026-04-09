@@ -43,7 +43,7 @@ export default function CaseStudyPage() {
           </div>
 
           {/* Freelancer card */}
-          <div className="bg-surface-container-lowest rounded-3xl p-6 w-full lg:w-80 shadow-[0_20px_40px_rgba(29,27,32,0.06)]">
+          <Link href="/freelancer/1" className="bg-surface-container-lowest rounded-3xl p-6 w-full lg:w-80 shadow-[0_20px_40px_rgba(29,27,32,0.06)] block hover:shadow-[0_20px_40px_rgba(29,27,32,0.1)] transition-shadow">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center text-on-primary font-display font-bold">
                 ER
@@ -63,7 +63,7 @@ export default function CaseStudyPage() {
               </span>
               Top Rated Plus
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 

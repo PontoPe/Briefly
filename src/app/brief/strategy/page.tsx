@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { BriefSidebar } from "@/components/BriefSidebar";
 import { Icon } from "@/components/Icon";
@@ -21,10 +22,43 @@ const channels = [
   { name: "LinkedIn Native", note: "B2B crossover", active: true },
 ];
 
+const availableLanguages = [
+  "English",
+  "Portuguese",
+  "Spanish",
+  "French",
+  "German",
+  "Italian",
+  "Mandarin",
+  "Japanese",
+  "Korean",
+  "Arabic",
+  "Hindi",
+  "Dutch",
+  "Russian",
+];
+
 export default function BriefStrategyPage() {
   const [maturity, setMaturity] = useState("zero");
   const [selectedAge, setSelectedAge] = useState("25-34");
   const [selectedStyle, setSelectedStyle] = useState("Minimalist");
+  const [langReqs, setLangReqs] = useState<{ lang: string; min: number }[]>([
+    { lang: "English", min: 3 },
+  ]);
+  const [showLangPicker, setShowLangPicker] = useState(false);
+
+  const setLangLevel = (lang: string, level: number) =>
+    setLangReqs((prev) =>
+      prev.map((l) => (l.lang === lang ? { ...l, min: level === l.min ? level - 1 : level } : l))
+    );
+
+  const addLanguage = (lang: string) => {
+    setLangReqs((prev) => [...prev, { lang, min: 1 }]);
+    setShowLangPicker(false);
+  };
+
+  const removeLanguage = (lang: string) =>
+    setLangReqs((prev) => prev.filter((l) => l.lang !== lang));
 
   return (
     <>
@@ -32,7 +66,7 @@ export default function BriefStrategyPage() {
       <BriefSidebar />
 
       <div className="ml-64 pt-4">
-        <div className="mx-auto max-w-[1100px] px-8 py-8">
+        <div className="mx-auto max-w-275 px-8 py-8">
           {/* Header */}
           <div className="mb-8">
             <p className="text-label-lg font-bold uppercase tracking-widest text-on-surface-variant mb-2">
@@ -150,16 +184,90 @@ export default function BriefStrategyPage() {
                 </div>
               </div>
 
+              {/* Language Requirements */}
+              <div className="bg-surface-container-low rounded-3xl p-6">
+                <label className="block text-label-md font-bold uppercase tracking-wider text-on-surface mb-2">
+                  Language Requirements
+                </label>
+                <p className="text-body-sm text-on-surface-variant mb-5">
+                  Set the minimum proficiency level (1–5) for each language you need. Only freelancers who meet all requirements will see this brief.
+                </p>
+                <div className="space-y-3">
+                  {langReqs.map((l) => (
+                    <div
+                      key={l.lang}
+                      className="flex items-center justify-between gap-4 bg-surface-container-lowest rounded-xl px-4 py-3 ghost-border"
+                    >
+                      <span className="text-body-md font-medium text-on-surface w-28 shrink-0">
+                        {l.lang}
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setLangLevel(l.lang, i + 1)}
+                            className={`w-8 h-8 rounded-lg text-label-sm font-bold flex items-center justify-center transition-colors ${
+                              i < l.min
+                                ? "bg-primary text-on-primary"
+                                : "bg-surface-container-high text-on-surface-variant hover:bg-primary/10"
+                            }`}
+                          >
+                            {i + 1}
+                          </button>
+                        ))}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-label-sm font-bold text-on-surface-variant w-12 text-right">
+                          {l.min > 0 ? `Min ${l.min}/5` : "Any"}
+                        </span>
+                        <button
+                          onClick={() => removeLanguage(l.lang)}
+                          className="text-on-surface-variant/40 hover:text-error transition-colors"
+                        >
+                          <Icon name="close" size={16} />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* Add Language */}
+                  <div className="relative">
+                    <button
+                      onClick={() => setShowLangPicker(!showLangPicker)}
+                      className="flex items-center gap-2 px-4 py-3 w-full rounded-xl border border-dashed border-outline-variant/30 text-body-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+                    >
+                      <Icon name="add" size={18} />
+                      Add Language Requirement
+                    </button>
+                    {showLangPicker && (
+                      <div className="absolute top-full left-0 right-0 mt-2 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/20 z-10 max-h-48 overflow-y-auto">
+                        {availableLanguages
+                          .filter((lang) => !langReqs.some((r) => r.lang === lang))
+                          .map((lang) => (
+                            <button
+                              key={lang}
+                              onClick={() => addLanguage(lang)}
+                              className="w-full text-left px-4 py-2.5 text-body-sm text-on-surface-variant hover:bg-primary/5 hover:text-primary transition-colors first:rounded-t-xl last:rounded-b-xl"
+                            >
+                              {lang}
+                            </button>
+                          ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
               {/* Action Bar */}
               <div className="flex items-center justify-between">
-                <button className="flex items-center gap-2 text-body-md text-on-surface-variant hover:text-on-surface transition-colors">
+                <Link href="/brief/new" className="flex items-center gap-2 text-body-md text-on-surface-variant hover:text-on-surface transition-colors">
                   <Icon name="arrow_back" size={18} />
                   Back
-                </button>
-                <button className="bg-gradient-to-r from-tertiary to-tertiary-container text-on-tertiary px-8 py-3.5 rounded-full font-display font-bold text-body-md hover:opacity-90 transition-opacity shadow-xl flex items-center gap-2 hover:scale-[1.02]">
+                </Link>
+                <Link href="/brief/deliverables" className="bg-linear-to-r from-tertiary to-tertiary-container text-on-tertiary px-8 py-3.5 rounded-full font-display font-bold text-body-md hover:opacity-90 transition-opacity shadow-xl flex items-center gap-2 hover:scale-[1.02]">
                   Next: Deliverables
                   <Icon name="arrow_forward" size={18} />
-                </button>
+                </Link>
               </div>
             </div>
 

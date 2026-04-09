@@ -57,7 +57,7 @@ export default function HomePage() {
       <section className="hero-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(104,250,221,0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(94,22,0,0.15),transparent_50%)]" />
-        <div className="relative mx-auto max-w-[1440px] px-6 lg:px-8 py-24 lg:py-36">
+        <div className="relative mx-auto max-w-360 px-6 lg:px-8 py-24 lg:py-36">
           <div className="max-w-3xl">
             <p className="text-secondary-container font-display text-label-lg font-bold uppercase tracking-widest mb-4">
               The Curated Canvas
@@ -92,7 +92,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-surface-container-lowest -mt-6 relative z-10 mx-6 lg:mx-auto max-w-[1200px] rounded-2xl shadow-[0_20px_40px_rgba(29,27,32,0.06)]">
+      <section className="bg-surface-container-lowest -mt-6 relative z-10 mx-6 lg:mx-auto max-w-300 rounded-2xl shadow-[0_20px_40px_rgba(29,27,32,0.06)]">
         <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-outline-variant/20">
           {stats.map((stat) => (
             <div key={stat.label} className="p-6 lg:p-8 text-center">
@@ -108,7 +108,7 @@ export default function HomePage() {
       </section>
 
       {/* Categories */}
-      <section className="mx-auto max-w-[1440px] px-6 lg:px-8 py-20">
+      <section className="mx-auto max-w-360 px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
           <p className="text-label-lg font-bold uppercase tracking-widest text-tertiary mb-2">
             Specialized Talent
@@ -137,7 +137,7 @@ export default function HomePage() {
 
       {/* Featured Freelancers */}
       <section className="bg-surface-container-low py-20">
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-8">
+        <div className="mx-auto max-w-360 px-6 lg:px-8">
           <div className="flex items-end justify-between mb-12">
             <div>
               <p className="text-label-lg font-bold uppercase tracking-widest text-tertiary mb-2">
@@ -157,9 +157,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredFreelancers.map((freelancer) => (
-              <div
+              <Link
                 key={freelancer.name}
-                className="bg-surface-container-lowest rounded-3xl p-6 hover:shadow-[0_20px_40px_rgba(29,27,32,0.06)] transition-shadow"
+                href="/freelancer/1"
+                className="bg-surface-container-lowest rounded-3xl p-6 hover:shadow-[0_20px_40px_rgba(29,27,32,0.06)] transition-shadow block"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
@@ -217,14 +218,14 @@ export default function HomePage() {
                     </span>
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="mx-auto max-w-[1440px] px-6 lg:px-8 py-20">
+      <section className="mx-auto max-w-360 px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
           <p className="text-label-lg font-bold uppercase tracking-widest text-tertiary mb-2">
             Streamlined Process
@@ -281,8 +282,8 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="mx-6 lg:mx-auto max-w-[1200px] mb-20">
-        <div className="bg-tertiary-container rounded-[2rem] p-12 lg:p-16 text-center">
+      <section className="mx-6 lg:mx-auto max-w-300 mb-20">
+        <div className="bg-tertiary-container rounded-4xl p-12 lg:p-16 text-center">
           <h2 className="font-display text-display-sm font-extrabold text-white tracking-tight">
             Ready to curate your next campaign?
           </h2>
