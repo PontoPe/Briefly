@@ -1,23 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Manrope";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200 800;
-  src: url("https://fonts.gstatic.com/s/manrope/v15/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk7PFO_F87jxeN7B.woff2")
-    format("woff2");
-}
-
-@font-face {
-  font-family: "Be Vietnam Pro";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url("https://fonts.gstatic.com/s/bevietnampro/v11/QdVPSTAyLFyeg_IDWvOJmVES_EwwD3s6ZKAi.woff2")
-    format("woff2");
-}
-
 :root {
   /* Primary */
   --primary: #381e73;
@@ -120,9 +102,9 @@
   --color-inverse-on-surface: var(--inverse-on-surface);
   --color-inverse-primary: var(--inverse-primary);
 
-  /* Fonts */
-  --font-display: "Manrope", sans-serif;
-  --font-body: "Be Vietnam Pro", sans-serif;
+  /* Fonts — powered by next/font CSS variables */
+  --font-display: var(--font-manrope), sans-serif;
+  --font-body: var(--font-be-vietnam-pro), sans-serif;
 
   /* Font sizes - Editorial scale */
   --font-size-display-lg: 3.5rem;

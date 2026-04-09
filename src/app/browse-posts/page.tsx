@@ -137,7 +137,7 @@ export default function BrowsePostsPage() {
 
       {/* Quick Filter Bar */}
       <div className="fixed top-18.25 w-full z-40 bg-surface-container-lowest/90 backdrop-blur-sm border-b border-outline-variant/10">
-        <div className="max-w-360 mx-auto px-8 py-3 flex items-center justify-between gap-4 overflow-x-auto">
+        <div className="max-w-360 mx-auto px-8 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-4 flex-nowrap">
             {quickFilters.map((f) => {
               const isOpen = openQuickFilter === f;
@@ -213,7 +213,7 @@ export default function BrowsePostsPage() {
       <main className="pt-40 pb-20 max-w-360 mx-auto px-8 min-h-screen">
         <div className="flex gap-12">
           {/* ── Sidebar Filters ──────────────────────────── */}
-          <aside className="w-72 shrink-0 hidden lg:block sticky top-44 h-[calc(100vh-12rem)] overflow-y-auto pr-4 space-y-8 pb-8">
+          <aside className="w-80 shrink-0 hidden lg:block sticky top-44 h-[calc(100vh-12rem)] overflow-y-auto pr-4 space-y-8 pb-8">
             {/* Business Objective */}
             <div>
               <button className="flex items-center justify-between w-full mb-4">
@@ -254,7 +254,7 @@ export default function BrowsePostsPage() {
                 {platforms.map((p) => (
                   <span
                     key={p}
-                    className="px-3 py-1 bg-surface-container rounded-lg text-xs font-semibold cursor-pointer hover:bg-primary/10 transition-colors"
+                    className="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-label-sm font-bold cursor-pointer hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-colors"
                   >
                     {p}
                   </span>
@@ -301,14 +301,14 @@ export default function BrowsePostsPage() {
                   <div
                     key={m}
                     onClick={() => setSelectedMaturity(m)}
-                    className={`p-3 border rounded-xl cursor-pointer transition-colors ${
+                    className={`p-3 border rounded-xl cursor-pointer transition-all ${
                       selectedMaturity === m
-                        ? "bg-primary/5 border-primary/40"
-                        : "border-outline-variant/20 hover:border-primary"
+                        ? "bg-primary/5 border-primary/40 shadow-[0_2px_8px_rgba(56,30,115,0.08)]"
+                        : "border-outline-variant/20 hover:border-primary/30"
                     }`}
                   >
                     <p
-                      className={`text-xs font-bold ${
+                      className={`text-body-sm font-bold ${
                         selectedMaturity === m
                           ? "text-primary"
                           : "text-on-surface"
@@ -327,7 +327,7 @@ export default function BrowsePostsPage() {
                 <h3 className="text-label-md font-bold text-primary uppercase tracking-widest mb-4">
                   Collab Model
                 </h3>
-                <select className="w-full bg-surface-container border-none rounded-lg text-sm font-medium py-3 px-4 focus:ring-1 focus:ring-primary">
+                <select className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl text-body-sm font-display font-bold py-3 px-4 focus:ring-1 focus:ring-primary focus:border-primary text-on-surface appearance-none cursor-pointer">
                   <option>Collaborative</option>
                   <option>Full Autonomy</option>
                   <option>Embedded</option>
@@ -362,16 +362,16 @@ export default function BrowsePostsPage() {
                     { lang: "Spanish", min: 0 },
                     { lang: "French", min: 0 },
                   ].map((l) => (
-                    <div key={l.lang} className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-medium text-on-surface-variant w-20 shrink-0">{l.lang}</span>
-                      <div className="flex items-center gap-1">
+                    <div key={l.lang} className="flex items-center justify-between gap-3">
+                      <span className="text-body-sm font-medium text-on-surface-variant min-w-0 shrink-0">{l.lang}</span>
+                      <div className="flex items-center gap-1.5">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <button
                             key={i}
-                            className={`w-5 h-5 rounded-md text-[10px] font-bold flex items-center justify-center transition-colors ${
+                            className={`w-6 h-6 rounded-lg text-[11px] font-bold flex items-center justify-center transition-colors ${
                               i < l.min
                                 ? "bg-primary text-on-primary"
-                                : "bg-surface-container-high text-on-surface-variant hover:bg-primary/10"
+                                : "bg-surface-container text-on-surface-variant hover:bg-primary/10"
                             }`}
                           >
                             {i + 1}
