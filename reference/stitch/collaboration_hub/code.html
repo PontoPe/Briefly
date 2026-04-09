@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Alpha - Collaboration Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#381e73",
+                        "primary-container": "#4f378b",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fdf7ff",
+                        "surface-dim": "#ded8e0",
+                        "on-surface": "#1d1b20",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005145",
+                        "on-surface-variant": "#494551",
+                        "on-tertiary-container": "#ff9a7c",
+                        "inverse-on-surface": "#f5eff7",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e6e0e9",
+                        "outline": "#7a7582",
+                        "surface-container-low": "#f8f2fa",
+                        "primary-fixed": "#e9ddff",
+                        "on-secondary-container": "#007261",
+                        "surface": "#fdf7ff",
+                        "tertiary-container": "#852300",
+                        "secondary-fixed": "#68fadd",
+                        "secondary": "#006b5c",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb59f",
+                        "surface-variant": "#e6e0e9",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1d1b20",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#44ddc1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#852300",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-secondary-fixed": "#00201a",
+                        "tertiary-fixed": "#ffdbd0",
+                        "inverse-primary": "#cfbcff",
+                        "tertiary": "#5e1600",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#22005d",
+                        "on-primary-container": "#c0a8ff",
+                        "secondary-container": "#68fadd",
+                        "surface-container-high": "#ece6ee",
+                        "on-primary-fixed-variant": "#4f378b",
+                        "outline-variant": "#cbc4d2",
+                        "surface-tint": "#674fa5",
+                        "on-tertiary-fixed": "#3a0a00",
+                        "inverse-surface": "#322f35",
+                        "surface-container": "#f2ecf4",
+                        "background": "#fdf7ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-sculpting {
+            transition: background-color 0.3s ease;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbc4d2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-extrabold tracking-tighter text-primary">Editorial Marketplace</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Browse</a>
+<a class="text-primary dark:text-primary-light font-bold border-b-2 border-primary" href="#">Collaborate</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Freelancers</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant-dark font-medium hover:text-primary transition-colors duration-300" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-bold scale-95 active:scale-90 transition-transform">Post a Project</button>
+<img alt="User profile" class="w-10 h-10 rounded-full" data-alt="professional headshot of a creative director in a minimalist studio setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk2vtaWI5BzPhG9WJ1IgkkSU_hxWoHBQF3odzSMZyZKguPq7z1wKd_WQLRhXMy722MdEiZ14QhIpME_NZNr9a5bjH0cw2XLOmc-3Lm2yF_fgjalQQ9WENBlMKklPGSvOetfYLK9L-RbccdJ4_4xjWn0RBtdcRMiTo1b0p_nYbAnqP8qR1f4DxWHkU1IbmIUZJOl_cxrwjUb95wab4ec_5OEy86i3T57cCq02TWkzcTugMDNfaQWFnSqBz7LlTZOVWAnrKoUFLsGF0b"/>
+</div>
+</div>
+</nav>
+<aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-surface-container-low flex flex-col gap-2 p-4 z-40">
+<div class="px-4 py-6 mb-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary font-bold">PA</div>
+<div>
+<h2 class="text-on-surface font-bold text-lg">Project Alpha</h2>
+<p class="text-on-surface-variant text-xs">Marketing Campaign</p>
+</div>
+</div>
+<button class="w-full mt-4 py-2 px-4 bg-tertiary-container text-on-tertiary-container rounded-full font-bold text-sm transition-all active:scale-95">Share Project</button>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-medium">Workspace</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold bg-surface-container-highest rounded-r-full" href="#">
+<span class="material-symbols-outlined" data-icon="Draw">draw</span>
+<span class="font-medium">Collaborate</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-medium">Brand Kit</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-medium">Performance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+</aside>
+<main class="ml-64 pt-24 px-8 pb-16 min-h-screen">
+<div class="max-w-[1200px] mx-auto grid grid-cols-12 gap-8">
+<section class="col-span-12 lg:col-span-8 flex flex-col gap-6">
+<div class="bg-surface-container rounded-3xl p-6 relative overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="design_services">design_services</span>
+<h3 class="font-headline font-bold text-xl tracking-tight">Main Campaign Visual - v4.0</h3>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="fullscreen">fullscreen</span>
+</button>
+</div>
+</div>
+<div class="relative group cursor-crosshair rounded-xl overflow-hidden bg-black">
+<img alt="Design Asset" class="w-full h-auto opacity-90" data-alt="high-end editorial fashion photography layout with bold typography and minimalist grid structure on a cream background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_aiZn0oUgIba4Mt009_FRv-YESnCPlaSUPbN_DQjPyD08QwCvUI7I_rhcC06QBYJHX9JbieK1eSaP7H7tc1UommESBBTzzblgt6uhptYethSZU8npRb6fCe6HXLgvw87xc770aQ1DCAy-rziKfZIhr7umWZcyA17FYFoJ3BmxforK9BnuaO4VYjp9qN8KeDcyelMBHlJc7ESdJbOjFhGk3dG42mFvGTK7ATZNPdkbLroEvWCK6lXX-4nk2QZIBd2zoUMMJEfZWL2C"/>
+<div class="absolute top-1/4 left-1/3 w-8 h-8 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center font-bold text-sm shadow-xl ring-4 ring-tertiary/20">1</div>
+<div class="absolute bottom-1/3 right-1/4 w-8 h-8 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center font-bold text-sm shadow-xl ring-4 ring-tertiary/20">2</div>
+</div>
+<div class="mt-8 flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex gap-4 items-start">
+<div class="w-8 h-8 bg-tertiary text-on-tertiary rounded-full flex-shrink-0 flex items-center justify-center font-bold text-xs">1</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-1">
+<span class="font-bold text-sm">Julian Rossi <span class="text-on-surface-variant font-normal">(Client)</span></span>
+<span class="text-xs text-on-surface-variant">2h ago</span>
+</div>
+<p class="text-sm">The headline font here feels a bit light. Can we try the heavy weight of Manrope to match the brand guide?</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex gap-4 items-start">
+<div class="w-8 h-8 bg-tertiary text-on-tertiary rounded-full flex-shrink-0 flex items-center justify-center font-bold text-xs">2</div>
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-1">
+<span class="font-bold text-sm">Julian Rossi <span class="text-on-surface-variant font-normal">(Client)</span></span>
+<span class="text-xs text-on-surface-variant">1h ago</span>
+</div>
+<p class="text-sm">Love the color shift here. Let's make sure this hex matches the secondary brand teal exactly.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container rounded-3xl p-6">
+<h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="palette">palette</span>
+                            Brand Kit
+                        </h3>
+<div class="flex flex-col gap-6">
+<div class="flex gap-4">
+<div class="w-24 h-24 bg-surface-container-lowest rounded-xl flex items-center justify-center border border-outline-variant/20">
+<img alt="Logo Main" class="w-16" data-alt="minimalist abstract geometric logo icon in deep purple and teal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzBBvNE5f_cDpt4qzXst3fKpNJ2BuNgdqfB53DP7bF2YEouigMQkZGMPvcOE_nwayjUx8E2VbLvpXurfAXcaHOVdJ7XZ9wGTnbVrrZUgxHmZNSv8RF6vDBDbfHX2qzfuYQELYQKa_Kfc2kSLYaBwT75CXc6r6yRmhU5sx0owNMy4qeqOlxpMgSJO8NeY8KN_bumRAmu7_JL47ciOwieB430ebsWJdMTwVtLWIJ7rT-kolYNeJV0BFpTBhjYg_kdFFbd0UT8U0by6Rk"/>
+</div>
+<div class="w-24 h-24 bg-primary rounded-xl flex items-center justify-center">
+<img alt="Logo White" class="w-16" data-alt="minimalist abstract geometric logo icon in pure white on purple background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeWxgjkSewmwBf2CzquBm81f9xyndFXl4xwGxtTmNFtiZYCwsWVLbTMfY6TPMIu27nQhP62Jnou0tG3XUBRD8o86i9VohLMZbH2zLl-qhrD-90DYPpgXzBcKASoN258MJvQKzwFxUJD6tCn5MrpADlUuybpZKyxj7Q8aG6Tf-C5rTssut10fp7KP-JAQdXUSaecC0AdTm0EYAhhgJ5kHVsXgn5QevlbGy-pSgSPFVw_nKy2ZPBWHIiW8LfiekR0Q2Eq6kXUeE2Wfkp"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-[#381e73]"></div>
+<span class="text-xs font-mono font-bold">#381E73</span>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-[#006b5c]"></div>
+<span class="text-xs font-mono font-bold">#006B5C</span>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-[#5e1600]"></div>
+<span class="text-xs font-mono font-bold">#5E1600</span>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-[#fdf7ff] border border-outline-variant/20"></div>
+<span class="text-xs font-mono font-bold">#FDF7FF</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-3xl p-6">
+<h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="payments">payments</span>
+                            Milestones
+                        </h3>
+<div class="flex flex-col gap-4">
+<div class="p-4 rounded-2xl bg-secondary-container/20 border-l-4 border-secondary">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-on-secondary-container uppercase tracking-wider">Completed</span>
+<span class="font-bold text-primary">$2,500</span>
+</div>
+<p class="text-sm font-bold">Concept Development</p>
+<p class="text-xs text-on-surface-variant mt-1">Released on Oct 12</p>
+</div>
+<div class="p-4 rounded-2xl bg-surface-container-lowest">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-tertiary uppercase tracking-wider">In Progress</span>
+<span class="font-bold text-primary">$4,000</span>
+</div>
+<p class="text-sm font-bold">Final Asset Delivery</p>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-tertiary h-full w-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="col-span-12 lg:col-span-4">
+<div class="bg-surface-container-low rounded-3xl p-6 h-full sticky top-24">
+<h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="history">history</span>
+                        Version History
+                    </h3>
+<div class="flex flex-col gap-2 custom-scrollbar overflow-y-auto max-h-[700px] pr-2">
+<div class="p-4 rounded-2xl bg-surface-container-highest border border-primary/10">
+<div class="flex justify-between items-center mb-2">
+<span class="bg-primary text-on-primary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest">Active</span>
+<span class="text-xs text-on-surface-variant">Today, 2:45 PM</span>
+</div>
+<p class="font-bold text-sm">Version 4.0 - Typography Update</p>
+<p class="text-xs text-on-surface-variant mt-1">Adjusted headline weight and layout spacing based on v3.5 feedback.</p>
+<div class="mt-3 flex -space-x-2">
+<img alt="Avatar" class="w-6 h-6 rounded-full border-2 border-surface" data-alt="close-up of a smiling young professional woman with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcZiw7T5xIozGkMtVLJuCVx8uvTlcwmVhaXZNmYh08VGjh8i8QjbMO0BNuTdTTrmAmWbQKMIzAwexOshdORZqk8D31j8XWBf7DCDtGk0OhTkpGmKK3na0pSKN7sj6xYH8IWu4q3TIoV74hADZztQWlKF6vXtNOKlaoHihTb5Le9FFC2g96DziCrkbZiVLGORM1r51X3DfdQ8PSWMag0vB3r-FPYEcyf1ceSAnQ17kZzVKfT6HytEG7aTrCGrn8-Ql-ZQy2C-8utyaV"/>
+<img alt="Avatar" class="w-6 h-6 rounded-full border-2 border-surface" data-alt="close-up of a creative man with a beard and artistic attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwo4pPDrWUsujnFTy8Vd2eMAx22dCQlrbFp5kXcVimJmyVsWmXHXCDvVcwKimiI2mZZdsL3Z8RiXcaOd7jhumQG_e4wRXFUNThkWGkuqwF3NEeuzKqh5nlp1WE5jYKi2iimJqcNTt-OhDr-S9ljLKT6gNCDjWxEUGCiphgc3iX-fNT5n-EFN7OX2Jixy9J_If1wsqlM5fUKn3gTTZzpRD3gdccr9Pt4lhAllTmVBGtqeCCW81gIpOT1omJhaLc7hoMiHXy0kOGJ-CK"/>
+</div>
+</div>
+<div class="p-4 rounded-2xl hover:bg-surface-container transition-colors group cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest text-on-surface-variant">Previous</span>
+<span class="text-xs text-on-surface-variant">Oct 24, 11:20 AM</span>
+</div>
+<p class="font-bold text-sm group-hover:text-primary transition-colors">Version 3.5 - Color Calibration</p>
+<p class="text-xs text-on-surface-variant mt-1">Integrated new brand teal into primary call-to-action buttons.</p>
+</div>
+<div class="p-4 rounded-2xl hover:bg-surface-container transition-colors group cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest text-on-surface-variant">Previous</span>
+<span class="text-xs text-on-surface-variant">Oct 22, 09:15 AM</span>
+</div>
+<p class="font-bold text-sm group-hover:text-primary transition-colors">Version 3.0 - Major Layout Shift</p>
+<p class="text-xs text-on-surface-variant mt-1">Restructured grid to emphasize editorial photography.</p>
+</div>
+<div class="p-4 rounded-2xl hover:bg-surface-container transition-colors group cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest text-on-surface-variant">Archived</span>
+<span class="text-xs text-on-surface-variant">Oct 18, 4:00 PM</span>
+</div>
+<p class="font-bold text-sm group-hover:text-primary transition-colors">Version 2.0 - Concept Refinement</p>
+</div>
+<div class="p-4 rounded-2xl hover:bg-surface-container transition-colors group cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<span class="text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest text-on-surface-variant">Archived</span>
+<span class="text-xs text-on-surface-variant">Oct 15, 10:30 AM</span>
+</div>
+<p class="font-bold text-sm group-hover:text-primary transition-colors">Version 1.0 - Initial Sketches</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="w-full bg-surface-container-low grid grid-cols-1 md:grid-cols-4 gap-8 px-12 py-16">
+<div class="col-span-1">
+<div class="text-xl font-bold text-on-surface mb-4">Editorial Marketplace</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">Connecting world-class creative talent with forward-thinking agencies through curated collaboration tools.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-primary mb-2">Platform</h4>
+<a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Careers</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Support</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-primary mb-2">Legal</h4>
+<a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all text-sm" href="#">Cookie Policy</a>
+</div>
+<div class="col-span-1">
+<p class="text-on-surface-variant text-xs mt-auto">© 2024 Editorial Marketplace. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

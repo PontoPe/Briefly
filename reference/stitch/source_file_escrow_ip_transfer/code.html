@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Editorial Marketplace | Final Handover &amp; Escrow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#68fadd",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#68fadd",
+                      "inverse-on-surface": "#f5eff7",
+                      "surface-container-high": "#ece6ee",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb59f",
+                      "tertiary": "#5e1600",
+                      "on-secondary-fixed-variant": "#005145",
+                      "surface-tint": "#674fa5",
+                      "secondary": "#006b5c",
+                      "tertiary-fixed": "#ffdbd0",
+                      "surface-bright": "#fdf7ff",
+                      "on-primary-container": "#c0a8ff",
+                      "primary-container": "#4f378b",
+                      "secondary-fixed-dim": "#44ddc1",
+                      "surface-dim": "#ded8e0",
+                      "surface-container-highest": "#e6e0e9",
+                      "on-primary-fixed-variant": "#4f378b",
+                      "surface-variant": "#e6e0e9",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#1d1b20",
+                      "on-secondary-fixed": "#00201a",
+                      "primary": "#381e73",
+                      "primary-fixed-dim": "#cfbcff",
+                      "inverse-surface": "#322f35",
+                      "surface-container": "#f2ecf4",
+                      "surface": "#fdf7ff",
+                      "inverse-primary": "#cfbcff",
+                      "on-tertiary-fixed-variant": "#852300",
+                      "tertiary-container": "#852300",
+                      "on-primary": "#ffffff",
+                      "on-secondary-container": "#007261",
+                      "on-tertiary-fixed": "#3a0a00",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f8f2fa",
+                      "on-surface-variant": "#494551",
+                      "on-tertiary-container": "#ff9a7c",
+                      "on-background": "#1d1b20",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#cbc4d2",
+                      "background": "#fdf7ff",
+                      "error-container": "#ffdad6",
+                      "outline": "#7a7582",
+                      "primary-fixed": "#e9ddff",
+                      "on-primary-fixed": "#22005d",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Be Vietnam Pro"],
+                      "label": ["Be Vietnam Pro"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-black tracking-tighter text-primary dark:text-primary-container">Editorial Marketplace</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-manrope tracking-tight font-bold text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors" href="#">Marketplace</a>
+<a class="font-manrope tracking-tight font-bold text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors" href="#">Workspace</a>
+<a class="font-manrope tracking-tight font-bold text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-container transition-colors" href="#">Library</a>
+<a class="font-manrope tracking-tight font-bold text-primary dark:text-primary-container border-b-2 border-primary dark:border-primary-container pb-1" href="#">Escrow</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" data-icon="history">history</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold transition-all scale-95 active:duration-100 hover:opacity-90">New Project</button>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional creative director in a minimalist studio setting with soft side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhXbUzqGvW3rhQZFbX_od1glEHURjKCLaUMC5ITQp6hWZphppLzEygRZ3SGt4jHFLgjNp7979tQOAt2tgoI4UcRsMD-CSvSuKoxqgwTGET6j4s1xZgqNDfQ6E99qmTUBEKOnDHJVcGp5dO3iRUpJ_ku24eFBK0ILUd17yUoWJXfPzVtnOFFaNIcQhZ7C8E7epcyVFAAhk7RfPI-bgbqejftr-nVREzqsL3nQJLNHvrqh6epm1uoEDXKiEpMIZ1Vdde4KoQppTXvLGC"/>
+</div>
+</div>
+</nav>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 sticky left-0 top-18 bg-surface-container-low dark:bg-surface-container-low flex flex-col py-6 pr-4 hidden lg:flex">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="token">token</span>
+</div>
+<span class="text-lg font-bold text-on-surface">Project Alpha</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-widest">Marketing Campaign</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-r-full font-be-vietnam text-sm font-medium transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="comment">comment</span> Annotations
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-r-full font-be-vietnam text-sm font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="restore">restore</span> Versions
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-r-full font-be-vietnam text-sm font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span> Brand Kit
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 bg-primary-container text-on-primary-container rounded-r-full font-be-vietnam text-sm font-bold transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="enhanced_encryption">enhanced_encryption</span> Escrow
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-r-full font-be-vietnam text-sm font-medium transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+                </a>
+</nav>
+<div class="mt-auto px-6 pt-6 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 py-2 text-on-surface-variant hover:text-primary text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span> Support
+                </a>
+<a class="flex items-center gap-3 py-2 text-on-surface-variant hover:text-primary text-sm font-medium mb-6" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="rate_review">rate_review</span> Feedback
+                </a>
+<button class="w-full py-3 px-4 rounded-xl bg-surface-container-highest text-on-surface font-bold text-sm hover:bg-error-container hover:text-on-error-container transition-colors">
+                    Archive Project
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 bg-surface-container-low min-h-screen">
+<div class="max-w-6xl mx-auto px-8 py-12">
+<!-- Header Section -->
+<div class="mb-12">
+<div class="flex items-center gap-2 text-secondary font-bold text-sm mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                        Final Project Stage: Source File Escrow
+                    </div>
+<h1 class="text-5xl font-extrabold tracking-tighter text-on-surface mb-4">The Final Handover.</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">Ensure all intellectual property and technical assets are verified before completing the release. Once confirmed, legal ownership and funds will be transferred instantly.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left: The Vault (Uploader & Files) -->
+<div class="lg:col-span-8 space-y-8">
+<section class="bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-2xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="lock">lock</span>
+                                    The File Vault
+                                </h3>
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Secure Transfer Active</span>
+</div>
+<!-- File Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-6 rounded-2xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Brand_Guidelines_v4.ai</p>
+<p class="text-xs text-on-surface-variant">42.5 MB • Adobe Illustrator</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="grid_view">grid_view</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface">Social_Kit_Final.fig</p>
+<p class="text-xs text-on-surface-variant">12.8 MB • Figma Project</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex items-center gap-4 group hover:bg-surface-container transition-colors border-2 border-dashed border-outline-variant/30">
+<div class="w-12 h-12 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="add">add</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-outline">Upload PSD Files</p>
+<p class="text-xs text-on-surface-variant">Drag or click to add source</p>
+</div>
+</div>
+</div>
+<!-- Verification Checklist -->
+<div class="border-t border-outline-variant/20 pt-8">
+<h4 class="text-sm font-black uppercase tracking-widest text-on-surface-variant mb-6">Technical Verification Checklist</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-5 h-5 rounded border border-primary bg-primary flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-white text-[16px]" data-icon="check">check</span>
+</div>
+<div>
+<p class="font-bold text-sm">Fonts Outlined</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">All typography converted to vector paths for universal compatibility.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-5 h-5 rounded border border-primary bg-primary flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-white text-[16px]" data-icon="check">check</span>
+</div>
+<div>
+<p class="font-bold text-sm">Assets Embedded</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">All linked images and raster assets are embedded directly within source files.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-5 h-5 rounded border border-outline-variant mt-0.5"></div>
+<div>
+<p class="font-bold text-sm text-on-surface/60">Layers Organized</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Layers named, grouped, and unnecessary drafts removed from the final file.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Legal Notice Section -->
+<section class="bg-surface-container rounded-[2rem] p-8 border border-outline-variant/10">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-tertiary-container text-on-tertiary-container rounded-full flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">Legal IP Transfer Notice</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                                        By clicking "Release Funds," you acknowledge that the freelancer has satisfied all project deliverables. Editorial Marketplace automatically executes a <strong>full copyright transfer agreement</strong> upon payment release. All Intellectual Property (IP) rights, titles, and interests in the work products listed in the Vault are hereby irrevocably assigned to the Client.
+                                    </p>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:underline" href="#">
+                                        Review Transfer Agreement Details <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Sticky Completion Sidebar -->
+<div class="lg:col-span-4">
+<div class="sticky top-28 space-y-6">
+<div class="bg-surface-container-highest rounded-[2rem] p-8 overflow-hidden relative">
+<!-- Subtle Background Gradient Decoration -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+<h3 class="text-sm font-black uppercase tracking-widest text-on-surface-variant mb-6">Escrow Summary</h3>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Project Total</span>
+<span class="font-bold">$4,250.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Escrow Fee (3%)</span>
+<span class="font-bold text-on-surface-variant">$127.50</span>
+</div>
+<div class="border-t border-outline-variant/20 pt-4 flex justify-between items-center">
+<span class="text-lg font-bold">Release Amount</span>
+<span class="text-2xl font-black text-primary">$4,122.50</span>
+</div>
+</div>
+<div class="space-y-3">
+<button class="w-full py-5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-lg hover:opacity-90 transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-2">
+                                        Release Funds &amp; Complete Transfer
+                                    </button>
+<button class="w-full py-4 rounded-full border border-outline-variant/30 text-on-surface font-bold hover:bg-surface transition-all">
+                                        Request Revision
+                                    </button>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/20 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="shield">shield</span>
+</div>
+<p class="text-[10px] text-on-surface-variant uppercase font-black leading-tight tracking-wider">
+                                        Payment protected by <br/>Editorial Marketplace Escrow
+                                    </p>
+</div>
+</div>
+<!-- Help Card -->
+<div class="bg-surface-container-low rounded-3xl p-6 relative overflow-hidden group cursor-pointer border border-outline-variant/10">
+<img class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-110 transition-transform duration-700" data-alt="professional workspace with high-end tech equipment and soft ambient lighting on dark wooden desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmNKBTk76XRtanPjrRclRgRV0UkVkhLvTk5_BWS0ki-jUBABVlai5v4O_PC6kPyDL_TgW6GignJrQJWhPTAxNWZJkX11jAn-qqqwCA-N84FdC6npk7YTpUYN1IMdgpGil_kBDJeV_4XT_QA56fW_lO9GmBcNoEv_f2bw0hsdsagI6gdlK5h_CAghs7h7jgy1P69kvNFVLjA8vqJ9PuSjo0-RgsE5N-uZc0D3M5lsLbTxs70qfxNlEK_FUxOnantG6tAY9h3pJYI_D1"/>
+<div class="relative z-10">
+<h4 class="font-bold mb-2">Need a Technical Review?</h4>
+<p class="text-xs text-on-surface-variant mb-4 leading-relaxed">Our experts can verify your source files for $49 per asset.</p>
+<span class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1">
+                                        Book Expert Review <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation (Bottom Bar) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/80 backdrop-blur-xl border-t border-outline-variant/10 flex justify-around py-3 px-4 z-50">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="text-[10px] font-bold">Explore</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="text-[10px] font-bold">Workspace</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-[10px] font-bold">Escrow</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</div>
+</div>
+</body></html>
